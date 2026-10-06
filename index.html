@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090507">
+<meta name="description" content="A birthday universe made for Aasthudi.">
+<title>For Aasthudi ✨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#090507;--bg2:#18080d;--cream:#fff7ed;--muted:#d8c5c0;--red:#a9152d;--red2:#e52d4f;--gold:#e9c878;--line:rgba(255,255,255,.12);--glass:rgba(255,255,255,.065)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:"DM Sans",sans-serif;overflow-x:hidden}body.lock{overflow:hidden}a{color:inherit;text-decoration:none}button{font:inherit}
+#webgl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.noise{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+main{position:relative;z-index:3}section{min-height:100svh;position:relative;padding:110px 22px}.container{width:min(1080px,100%);margin:auto}.kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:.68rem;font-weight:700;margin-bottom:18px}h1,h2,h3{font-family:"Playfair Display",serif}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:35px 22px;overflow:hidden}.hero-content{max-width:760px;position:relative}.mini-symbol{width:58px;height:58px;border:1px solid rgba(233,200,120,.55);border-radius:50%;display:grid;place-items:center;margin:0 auto 24px;color:var(--gold);font-size:1.45rem;box-shadow:0 0 40px rgba(233,200,120,.12)}
+.hero h1{font-size:clamp(3.3rem,15vw,7.8rem);line-height:.9;margin:0 0 25px;letter-spacing:-.045em}.script{font-family:Pacifico,cursive;color:var(--gold);font-weight:400}.hero .sub{color:var(--muted);font-size:clamp(1rem,3.8vw,1.2rem);line-height:1.8;max-width:600px;margin:0 auto 34px}.scroll-cue{display:inline-flex;gap:10px;align-items:center;color:#eadbd7;font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;opacity:.75}.scroll-cue span{width:34px;height:1px;background:var(--gold)}
+.reveal{opacity:0;transform:translateY(35px)}
+.story{display:grid;grid-template-columns:1fr;gap:42px;align-items:center}@media(min-width:800px){.story{grid-template-columns:1fr 1fr;gap:80px}}
+.copy h2{font-size:clamp(2.5rem,8vw,5rem);line-height:1.02;margin:0 0 20px}.copy p{color:var(--muted);line-height:1.9;font-size:1rem}
+.glass{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));border-radius:28px;box-shadow:0 25px 90px rgba(0,0,0,.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.orbit-card{min-height:360px;display:grid;place-items:center;position:relative;overflow:hidden}.orbit-ring{position:absolute;width:240px;height:240px;border:1px solid rgba(233,200,120,.28);border-radius:50%;transform:rotate(25deg);box-shadow:0 0 60px rgba(169,21,45,.16)}.orbit-ring:after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--gold);top:12px;left:30px;box-shadow:0 0 18px var(--gold)}.orbit-heart{font-size:5rem;filter:drop-shadow(0 0 30px rgba(229,45,79,.35))}
+.timeline{display:grid;gap:18px;margin-top:35px}.memory{padding:24px;display:grid;grid-template-columns:80px 1fr;gap:20px;align-items:start;transition:.3s}.memory:hover{transform:translateY(-4px);border-color:rgba(233,200,120,.35)}.memory .date{font-family:"Playfair Display";font-size:1.15rem;color:var(--gold)}.memory h3{font-size:1.3rem;margin:0 0 7px}.memory p{color:var(--muted);font-size:.92rem;line-height:1.65;margin:0}
+.photos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:30px}.photo{aspect-ratio:1/1;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(135deg,#291016,#6e1a2b);border:1px solid var(--line)}.photo:nth-child(2){transform:translateY(25px)}.photo:nth-child(3){transform:translateY(-10px)}.photo:nth-child(4){transform:translateY(18px)}.photo img{width:100%;height:100%;object-fit:cover;display:block}.placeholder{width:100%;height:100%;display:grid;place-items:center;text-align:center;padding:20px;color:#f8dfd9;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.countdown-wrap{text-align:center}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:650px;margin:30px auto}.time{padding:18px 8px;border-radius:18px;background:var(--glass);border:1px solid var(--line)}.time b{font-family:"Playfair Display";font-size:clamp(1.8rem,8vw,3.2rem);display:block}.time span{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.letter{max-width:760px;margin:auto;padding:34px 26px;position:relative}.letter:before{content:"“";position:absolute;top:-30px;left:12px;font-family:"Playfair Display";font-size:8rem;color:rgba(233,200,120,.12);line-height:1}.letter h2{font-size:clamp(2.6rem,9vw,4.7rem);margin:0 0 25px}.letter p{color:#eadbd7;line-height:2;font-size:1rem}.signature{font-family:Pacifico,cursive;color:var(--gold);font-size:1.7rem;margin-top:28px}
+.final{display:grid;place-items:center;text-align:center;overflow:hidden}.final h2{font-size:clamp(3rem,13vw,7rem);line-height:.95;margin:0 0 18px}.final p{color:var(--muted);max-width:600px;line-height:1.8}.cta{margin-top:30px;border:1px solid rgba(233,200,120,.5);color:var(--cream);background:linear-gradient(135deg,rgba(169,21,45,.75),rgba(100,10,27,.65));padding:15px 24px;border-radius:999px;cursor:pointer;box-shadow:0 10px 40px rgba(169,21,45,.22);transition:.3s}.cta:hover{transform:translateY(-3px)}
+footer{text-align:center;padding:25px 20px 45px;color:#9e8b87;font-size:.7rem;letter-spacing:.08em}
+#opening{position:fixed;inset:0;z-index:20;background:#090507;display:grid;place-items:center;padding:30px;transition:opacity 1s ease,visibility 1s ease}#opening.hide{opacity:0;visibility:hidden;pointer-events:none}.opening-inner{text-align:center;max-width:560px}.drape{color:var(--gold);font-size:2.4rem;margin-bottom:18px;animation:pulse 2s infinite ease-in-out}.opening-inner h2{font-size:clamp(2.5rem,10vw,5rem);margin:0 0 14px}.opening-inner p{color:var(--muted);line-height:1.7}.enter{margin-top:28px;padding:14px 24px;border-radius:999px;background:transparent;color:var(--cream);border:1px solid rgba(233,200,120,.6);cursor:pointer}
+@keyframes pulse{50%{transform:scale(1.08);filter:drop-shadow(0 0 15px rgba(233,200,120,.4))}}
+.sparkle{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold);pointer-events:none}
+@media(max-width:420px){section{padding:90px 17px}.memory{grid-template-columns:65px 1fr;padding:20px}.letter{padding:30px 21px}}
+</style>
+</head>
+
+<body class="lock">
+<div id="opening">
+  <div class="opening-inner">
+    <div class="drape">🪶</div>
+    <div class="kicker">A little universe, made for one person</div>
+    <h2>Aasthudi,<br><span class="script">tere liye kuch hai…</span></h2>
+    <p>Take a breath. And enter when you're ready.</p>
+    <button class="enter" id="enterBtn">Open your surprise ✨</button>
+  </div>
+</div>
+
+<canvas id="webgl"></canvas><div class="noise"></div>
+
+<main>
+<section class="hero" id="top">
+ <div class="hero-content">
+  <div class="mini-symbol">✦</div>
+  <div class="kicker reveal">12 October · A day worth remembering</div>
+  <h1 class="reveal">Happy Birthday,<br><span class="script">Aasthudi</span></h1>
+  <p class="sub reveal">Some people enter your life quietly… and somehow become a part of every ordinary moment that matters.</p>
+  <div class="scroll-cue reveal"><span></span> scroll into the memories <span></span></div>
+ </div>
+</section>
+
+<section>
+ <div class="container story">
+  <div class="copy reveal">
+   <div class="kicker">01 · The beginning</div>
+   <h2>It was never just another friendship.</h2>
+   <p>Somewhere between random conversations, stupid jokes, serious talks and those little moments nobody else notices, you became one of my favourite people.</p>
+   <p>And honestly? I'm glad life decided to make you my Aasthudi.</p>
+  </div>
+  <div class="glass orbit-card reveal">
+   <div class="orbit-ring"></div><div class="orbit-heart">♥</div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="copy reveal">
+   <div class="kicker">02 · Our little timeline</div>
+   <h2>Things I wouldn't trade.</h2>
+  </div>
+  <div class="timeline">
+   <article class="memory glass reveal"><div class="date">2 Feb</div><div><h3>pahla nasha, pahla khuma</h3><p>That little beginning that somehow became a whole collection of memories.</p></div></article>
+   <article class="memory glass reveal"><div class="date">Then</div><div><h3>From becoming senior sahab…</h3><p>…to becoming your bestie forever. Somehow that promotion got permanent.</p></div></article>
+   <article class="memory glass reveal"><div class="date">Later</div><div><h3>Miss junior sahiba hona tha…</h3><p>pyaar hua mere yaar wala. And yes, I'm still blaming you for that.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container story">
+  <div class="copy reveal">
+   <div class="kicker">03 · The gallery</div>
+   <h2>A few frames from a very big story.</h2>
+   <p>Replace the four placeholders with your favourite photos. Nothing else on the page needs to change.</p>
+  </div>
+  <div class="photos reveal">
+   <div class="photo"><img src="photos/photo1.jpg" alt="Aasthudi memory 1" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">Add<br>photo1.jpg</div></div>
+   <div class="photo"><img src="photos/photo2.jpg" alt="Aasthudi memory 2" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">Add<br>photo2.jpg</div></div>
+   <div class="photo"><img src="photos/photo3.jpg" alt="Aasthudi memory 3" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">Add<br>photo3.jpg</div></div>
+   <div class="photo"><img src="photos/photo4.jpg" alt="Aasthudi memory 4" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">Add<br>photo4.jpg</div></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container countdown-wrap">
+  <div class="kicker reveal">04 · The day</div>
+  <h2 class="reveal" style="font-size:clamp(2.8rem,10vw,5.5rem);margin:0">Until your next chapter…</h2>
+  <div class="countdown reveal">
+   <div class="time"><b id="days">00</b><span>days</span></div>
+   <div class="time"><b id="hours">00</b><span>hours</span></div>
+   <div class="time"><b id="mins">00</b><span>minutes</span></div>
+   <div class="time"><b id="secs">00</b><span>seconds</span></div>
+  </div>
+  <p class="reveal" style="color:var(--muted);line-height:1.8">And when the countdown reaches zero, remember: the best part isn't the number. It's all the people who are grateful that you exist.</p>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="glass letter reveal">
+   <div class="kicker">05 · A letter for you</div>
+   <h2>Meri Puchki, meri Rasmalai, meri Dhokli, meri Jaan…</h2>
+   <p>Happy Birthday, Aasthudi 🤍</p>
+   <p>Tu un logon mein se hai jinke saath hasi thodi aur real lagti hai, serious baatein thodi aur safe lagti hain, aur ordinary moments bhi baad mein memories ban jaate hain.</p>
+   <p>I hope this year gives you reasons to laugh loudly, dream without limits, sketch all the beautiful things you imagine, and stay exactly the person you are — soft, strong, weird and completely you.</p>
+   <p>Thank you for being there in the tiny moments. For the conversations, the madness, the comfort, and for simply being you.</p>
+   <p>Happy Birthday, Gagudi. Stay weird. Stay soft. Stay you. <b>love you 🤍</b></p>
+   <div class="signature">— Tera Puchku / Chikuda</div>
+  </div>
+ </div>
+</section>
+
+<section class="final" id="final">
+ <div class="container">
+  <div class="kicker reveal">06 · One last thing</div>
+  <h2 class="reveal">mari gagudi<br>mari puchki<br>mari rasmalai<br><span class="script">mari aasthudi, meri jaan 🤍</span></h2>
+  <p class="reveal">No grand explanation. Just one simple wish: may life always be a little kinder to the girl who makes other people's lives brighter.</p>
+  <button class="cta reveal" id="wishBtn">Make a birthday wish ✨</button>
+ </div>
+</section>
+</main>
+<footer>Made with ridiculous amounts of affection · For Aasthudi · 12 October</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+(() => {
+  "use strict";
+
+  /* =========================
+     BIRTHDAY DATE
+     Change only this if needed.
+     Month is 0-based: October = 9.
+  ========================== */
+  const BIRTHDAY_MONTH = 9;
+  const BIRTHDAY_DAY = 12;
+
+  const opening = document.getElementById("opening");
+  document.getElementById("enterBtn").addEventListener("click", () => {
+    opening.classList.add("hide");
+    document.body.classList.remove("lock");
+    startExperience();
+  });
+
+  /* =========================
+     THREE.JS — floating universe
+  ========================== */
+  const canvas = document.getElementById("webgl");
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, .1, 100);
+  camera.position.z = 8;
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  const geometry = new THREE.BufferGeometry();
+  const count = innerWidth < 600 ? 650 : 1100;
+  const positions = new Float32Array(count * 3);
+  const sizes = new Float32Array(count);
+
+  for(let i=0;i<count;i++){
+    positions[i*3] = (Math.random()-.5)*15;
+    positions[i*3+1] = (Math.random()-.5)*15;
+    positions[i*3+2] = (Math.random()-.5)*10;
+    sizes[i] = Math.random()*2+1;
+  }
+  geometry.setAttribute("position",new THREE.BufferAttribute(positions,3));
+  geometry.setAttribute("size",new THREE.BufferAttribute(sizes,1));
+
+  const material = new THREE.PointsMaterial({
+    color:0xe9c878,size:.035,transparent:true,opacity:.7,
+    blending:THREE.AdditiveBlending,depthWrite:false
+  });
+  const stars = new THREE.Points(geometry,material);
+  group.add(stars);
+
+  const glowGeo = new THREE.SphereGeometry(1.5,32,32);
+  const glowMat = new THREE.MeshBasicMaterial({color:0x7f1027,transparent:true,opacity:.12});
+  const glow = new THREE.Mesh(glowGeo,glowMat);
+  glow.position.set(0,0,-3);
+  group.add(glow);
+
+  let targetX=0,targetY=0;
+  addEventListener("pointermove",e=>{
+    targetX=(e.clientX/innerWidth-.5)*.7;
+    targetY=(e.clientY/innerHeight-.5)*.5;
+  },{passive:true});
+
+  function animate(){
+    requestAnimationFrame(animate);
+    stars.rotation.y += .00045;
+    stars.rotation.x += .00012;
+    glow.scale.setScalar(1 + Math.sin(performance.now()*.0006)*.08);
+    group.rotation.y += (targetX-group.rotation.y)*.012;
+    group.rotation.x += (-targetY-group.rotation.x)*.012;
+    renderer.render(scene,camera);
+  }
+  animate();
+
+  addEventListener("resize",()=>{
+    camera.aspect=innerWidth/innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
+    renderer.setSize(innerWidth,innerHeight);
+  });
+
+  /* =========================
+     GSAP SCROLL REVEALS
+  ========================== */
+  function startExperience(){
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".reveal").forEach((el)=>{
+      gsap.fromTo(el,
+        {autoAlpha:0,y:35},
+        {autoAlpha:1,y:0,duration:1.05,ease:"power3.out",
+         scrollTrigger:{trigger:el,start:"top 88%",once:true}}
+      );
+    });
+
+    gsap.to(".orbit-ring",{rotation:385,duration:18,repeat:-1,ease:"none"});
+    gsap.to(".orbit-heart",{scale:1.12,duration:2,repeat:-1,yoyo:true,ease:"sine.inOut"});
+
+    gsap.to(".hero-content",{yPercent:18,opacity:.5,
+      scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
+  }
+
+  /* =========================
+     COUNTDOWN
+     Always targets the next Oct 12.
+  ========================== */
+  function nextBirthday(){
+    const now=new Date();
+    let year=now.getFullYear();
+    let d=new Date(year,BIRTHDAY_MONTH,BIRTHDAY_DAY,0,0,0);
+    if(d<=now) d=new Date(year+1,BIRTHDAY_MONTH,BIRTHDAY_DAY,0,0,0);
+    return d;
+  }
+  function updateCountdown(){
+    const now=new Date();
+    const target=nextBirthday();
+    let diff=Math.max(0,target-now);
+    const day=Math.floor(diff/86400000); diff%=86400000;
+    const hour=Math.floor(diff/3600000); diff%=3600000;
+    const min=Math.floor(diff/60000); diff%=60000;
+    const sec=Math.floor(diff/1000);
+    document.getElementById("days").textContent=String(day).padStart(2,"0");
+    document.getElementById("hours").textContent=String(hour).padStart(2,"0");
+    document.getElementById("mins").textContent=String(min).padStart(2,"0");
+    document.getElementById("secs").textContent=String(sec).padStart(2,"0");
+  }
+  updateCountdown();setInterval(updateCountdown,1000);
+
+  /* =========================
+     FINAL WISH — small celebration
+  ========================== */
+  document.getElementById("wishBtn").addEventListener("click",()=>{
+    const btn=document.getElementById("wishBtn");
+    btn.textContent="Wish sent to the universe ✨";
+    btn.disabled=true;
+
+    for(let i=0;i<90;i++){
+      const s=document.createElement("span");
+      s.className="sparkle";
+      s.style.left=(45+Math.random()*10)+"vw";
+      s.style.top=(48+Math.random()*10)+"vh";
+      document.body.appendChild(s);
+      gsap.fromTo(s,
+        {scale:0,opacity:1,x:0,y:0},
+        {scale:Math.random()*1.5+1,opacity:0,
+         x:(Math.random()-.5)*innerWidth*.9,
+         y:(Math.random()-.5)*innerHeight*.8,
+         duration:1.5+Math.random()*1.4,ease:"power2.out",
+         onComplete:()=>s.remove()}
+      );
+    }
+  });
+})();
+</script>
+</body>
+</html>
